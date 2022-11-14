@@ -1,0 +1,30 @@
+<h1 class='text-4xl ml-10 my-5'>Ironhack Cinema</h1>
+
+<h3 class='text-2xl ml-10 mt-5 mb-10'>Click on the movies to check the
+  showtimes!</h3>
+<div class='grid place-items-center'>
+  <div class='grid gap-x-8 gap-y-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+    {{#each this}}
+      <div class='w-11/12 rounded overflow-hidden shadow-lg'>
+        <img class='w-full' src='{{image}}' alt='Sunset in the mountains' />
+        <div class='px-6 py-4'>
+          <div class='font-bold text-lg mb-2'>{{title}}</div>
+        </div>
+        {{! </div>
+      <div> }}
+        <a href='movie/{{_id}}' class='grid place-items-center bottom-0'>
+          <button
+            class='relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'
+          >
+            <span
+              class='relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'
+            >
+              See more
+            </span>
+          </button>
+        </a>
+      </div>
+
+    {{/each}}
+  </div>
+</div>
