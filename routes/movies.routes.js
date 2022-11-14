@@ -1,16 +1,14 @@
 const router = require('express').Router();
 const Movie = require('../models/Movie.model');
 
-router.get('/movies', (req, res) => {
-  Movie.find()
-    .then((movies) => {
-      console.log(movies);
-      res.render('movies/movies', movies);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.render('/');
-    });
+router.get('/movies', async (req, res) => {
+  try {
+    const movies = await Movie.find();
+    res.render('movies/movies', movies);
+  } catch (err) {
+    console.log(err);
+    res.render('/');
+  }
 });
 
 router.get('/movie/:id', async (req, res) => {
@@ -23,6 +21,22 @@ router.get('/movie/:id', async (req, res) => {
     res.redirect('/movies');
   }
 });
+
+////////////////////////////////////////////////////
+/////////////////// PROMISES ///////////////////////
+////////////////////////////////////////////////////
+
+// router.get('/movies', (req, res) => {
+//   Movie.find()
+//     .then((movies) => {
+//       console.log(movies);
+//       res.render('movies/movies', movies);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.render('/');
+//     });
+// });
 
 // router.get('/movie/:id', (req, res) => {
 //   const id = req.params.id;
