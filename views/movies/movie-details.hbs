@@ -1,0 +1,43 @@
+<div class='grid place-items-center md:mt-32 lg:ml-96'>
+  <div
+    class='flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'
+  >
+
+    <img
+      class='object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
+      src='{{this.image}}'
+      alt=''
+    />
+
+    <div class='flex flex-col justify-between p-4 leading-normal'>
+      <a href='/movies' class='text-blue-600'>Go back</a>
+      <h5
+        class='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'
+      >{{this.title}}</h5>
+      <h6
+        class='mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white'
+      >Director: {{this.director}}</h6>
+      <h6
+        class='mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white'
+      >Stars:</h6>
+      <ul>
+        {{#each this}}
+          <li
+            class='mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white'
+          ><p>{{{stars}}}</p></li>
+        {{/each}}
+      </ul>
+      <p
+        class='mb-3 font-normal text-gray-700 dark:text-gray-400'
+      >{{this.description}}</p>
+
+      <ul>
+        {{#each this}}
+          <p
+            class='mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white'
+          >{{{showtimes}}}</p>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
