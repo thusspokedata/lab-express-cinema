@@ -50,4 +50,12 @@ router.get('/movie/:id', async (req, res) => {
 //     });
 // });
 
+// En el primer fragmento de código, se utiliza la sintaxis async/await para manejar la asincronía. 
+// La palabra clave async hace que la función devuelva una promesa, 
+// y await se utiliza para esperar a que esa promesa se resuelva.
+
+// El segundo fragmento de código utiliza promesas directamente con los métodos .then() y .catch(). 
+// El método .then() se utiliza para especificar lo que sucede cuando la promesa se resuelve, 
+// y .catch() se utiliza para manejar cualquier error que ocurra.
+
 module.exports = router;
